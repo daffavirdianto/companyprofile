@@ -1,0 +1,585 @@
+/* font awesome cdn link */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css');
+
+/* google font cdn link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+/* icon cdn link*/
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+:root{
+    --main-color:#2980b9;
+    --red:#f90606;
+    --light-color: #444444;
+    --light-db: #bbbbbb;
+    --light--bg:#eee;
+    --black:#000000;
+    --white:#fff;
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    --border: .1rem solid rgba(0,0,0,.2);
+    --blueborder :.1rem solid rgb(41, 127, 185);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    transition: .2s linear;
+}
+
+/* Sidebar Area */
+.sidebar{
+    width: 325px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: var(--light-color);
+    z-index: 100;
+}
+
+.sidebar-brand{
+    display: flex;
+    height: 90px;
+    margin-bottom: 20px;
+    padding: 10px 0px 10px 15px;
+    color: var(--white);
+}
+
+.sidebar-brand h2{
+    margin: auto 10px;
+}
+.sidebar-menu li{
+    width: 100%;
+    margin-bottom: 1.7rem;
+    padding-left: 1rem;
+}
+
+.sidebar-menu li a {
+    padding-left: 1rem;
+    display: block;
+    color: var(--white);
+    font-size: 1.1rem;
+    border-radius: 30px 0px 0px 30px;
+}
+
+.sidebar-menu li a.active{
+    background: var(--white);
+    padding: 10px;
+    color: var(--main-color);
+}
+
+.sidebar-menu li a:hover{
+    background: var(--white);
+    padding: 10px;
+    color: var(--main-color);
+}
+
+.sidebar-menu a span:first-child{
+    font-size: 1.5rem;
+    padding-right: 1rem;
+}
+/* Sidebar Button */
+#nav-toggle:checked + .sidebar{
+    width: 80px;
+}
+
+#nav-toggle:checked + .sidebar .sidebar-brand img{
+    width: 40px;
+    height: 35px;
+}
+
+#nav-toggle:checked + .sidebar .sidebar-brand h2,
+#nav-toggle:checked + .sidebar li a span:last-child,
+#nav-toggle:checked + .sidebar li .sidebar-submenu a:last-child{
+    display: none;
+}
+
+#nav-toggle:checked ~ .main-content{
+    margin-left: 80px;
+}
+
+#nav-toggle:checked ~ .main-content header{
+    width: calc(100% - 80px);
+    left: 80px;
+
+}
+
+.main-content {
+    margin-left: 325px;
+    transition: margin-left 300ms;
+}
+
+/* Header Area */
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border: var(--border);
+    background: var(--white);
+    position: fixed;
+    left: 325px;
+    width: calc(100% - 325px);
+    top: 0;
+    z-index: 100;
+    transition: left 300ms;
+}
+
+header span{
+    font-size: 2rem;
+    margin: auto .5rem;
+}
+
+.search-wrapper{
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.search-wrapper span{
+    display: inline-block;
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+
+.search-wrapper input{
+    height: 100%;
+    padding: .5rem;
+    border: none;
+    outline: none;
+}
+
+.user-wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.user-wrapper a{
+    margin-right: 2rem;
+    color: #707070;
+}
+
+.user-wrapper span{
+    font-size: 14px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.user-wrapper a:hover{
+    color: #313131;
+}
+
+
+main{
+    padding: 2.5rem 1rem;
+    background: var(--light--bg);
+    min-height: calc(100vh);
+}
+
+/* Main Content */
+.box-container{
+    margin-top: 30px;
+} 
+/* Box Container Dashboard, Home, All rental */
+.box-container .box{
+    display: block;
+    background: var(--white);
+    text-align: center;
+    padding: 10px;
+    border: var(--border);
+    border-radius: 5px;
+}
+
+.box-container .card{
+    display:inline-flex;
+    margin-top: 20px;
+}
+
+.box-container .card .kendaraan{
+    background: var(--white);
+    border-radius: 5px;
+    padding: 20px 10px;
+    margin-right: 15px;
+}
+
+.box-container .card .kendaraan .data{
+    display: flex;
+}
+.box-container .card .kendaraan .data h2{
+    margin: 5px 40px;
+}
+
+.box-container .card .kendaraan .data i{
+    font-size: 34px;
+    margin-left: 90px;
+    color: var(--light-db);
+}
+
+
+/* Box Kriteria Rekomendasi */
+.box-kriteria{
+    margin-top: 20px;
+    display: flex;
+}
+
+.box-kriteria form{
+    width: 500px;
+    height: fit-content;
+    margin-right: 20px;
+    background-color: var(--white);
+    border-radius: 5px;
+    padding: 20px;
+    border: var(--border);
+}
+
+.box-kriteria form .input-data{
+    margin-top: 10px;
+}
+
+.box-kriteria form .data-rent .input-data input{
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: var(--border);
+    font-size: 12px;
+}
+
+.input-data select{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: var(--border);
+}
+
+form .simpan{
+    color: var(--white);
+    background: var(--main-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 5px;
+    margin-top: 40px;
+}
+
+form .simpan:hover{
+    cursor: pointer;
+    background: #1f119e;
+}
+
+/* Table Rekomendasi */
+.box-kriteria .table-rekomendasi{
+    width: 100%;
+    padding: 10px;
+    background: var(--white);
+    border-radius: 5px;
+    border: var(--border);
+}
+
+.box-kriteria .table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.box-kriteria .table td,.box-kriteria .table th{
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    font-size: 12px;
+    text-align: center;
+}
+
+.box-kriteria .table th{
+    background-color: #f2f5ff;
+    color: #353535;
+}
+
+.box-kriteria .table tbody tr:nth-child(even){
+    background-color: #f2f5ff;
+}
+
+
+/* Breadcrumb */
+.breadcrumb-con{
+    background: var(--white);
+    border: var(--border);
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 50px;
+}
+.breadcrumb-item{
+    display: inline-block;
+}
+
+.breadcrumb-item a{
+    color: var(--main-color);
+}
+
+.breadcrumb-item a:hover{
+    color: var(--black);
+}
+
+.breadcrumb-item:not(:last-of-type)::after{
+    content: "/";
+    margin: 5px;
+    color:var(--light-color);
+}
+
+/* Input Data */
+.box-container form{
+    max-width: 900px;
+    width: 100%;
+    background: var(--white);
+    padding: 25px 30px;
+    margin: 1rem auto;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.box-container form .data-rent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.box-container form .data-rent .input-data{
+    margin: 5px 0 5px 0;
+    width:  calc(100% / 2 - 20px);
+}
+
+.data-rent .input-data .details{
+    display: block;
+    font-weight: 500;
+}
+
+.data-rent .input-data input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: var(--border);
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.data-rent .combo-data{
+    text-align: left;
+}
+
+.data-rent .combo-data label{
+    display: block;
+    font-weight: 500;
+}
+
+.data-rent .combo-data select{
+    width: 400px;
+    padding: 5px 10px;
+    height: 100px;
+    border-radius: 5px;
+    border: var(--border);
+}
+
+.data-rent .combo-data option{
+    width: 200px;
+}
+
+form .simpan{
+    width: 100%;
+    color: var(--white);
+    background: var(--main-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+form .simpan:hover{
+    cursor: pointer;
+    background: #86c8f3;
+}
+
+/* Tabel Update */
+.input-data .tables{
+    width: 100%;
+    border: var(--border);
+    border-collapse: collapse;
+}
+
+.input-data .tables td,.input-data .tables th{
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.input-data .tables tbody tr:nth-child(even){
+    background-color: #f2f5ff;
+}
+
+.input-data .tables th{
+    background-color: #f2f5ff;
+    color: #353535;
+}
+
+
+/* Edit dan Delet Table */
+.input-data .tables tbody tr td.actions .hapus {
+    display: inline-flex;
+    color: #f02020;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.input-data .tables tbody tr td.actions .hapus:hover{
+    background-color: #f02020;
+    color: #fff;
+    padding: 2px 5px;
+}
+
+@media (max-width: 584px){
+    .box-container{
+        max-width: 100%;
+    }
+
+    form .data-rent .input-data{
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
+
+/* Tambah Data */
+.create-contact {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #38b673;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    margin: 10px 0;
+}
+
+.create-contact:hover {
+    background-color: #1a5837;
+}
+
+/* Tabel  */
+.box-container .table-container{
+    background-color: var(--white);
+    padding: 10px;
+    border: var(--border);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.box-container .table-container::-webkit-scrollbar{
+    width: 0;
+}
+
+.box-container .judul-table{
+    padding: 10px;
+    background: #e7edfe;
+    border: var(--border);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #2d55c2;
+}
+
+.box-container .table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.box-container .table td,.box-container .table th{
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 12px;
+}
+
+.box-container .table td img{
+    width: 80px;
+    height: 80px;
+}
+.box-container .table th{
+    background-color: rgb(92, 92, 92);
+    color: #ffffff;
+}
+
+.box-container .table tbody tr:nth-child(even){
+    background-color: #f5f5f5;
+}
+
+/* Edit dan Delet Table */
+.table tbody tr td.actions {
+    padding: 10px;
+}
+
+.table tbody tr td.actions .edit, .table tbody tr td.actions .trash {
+    display: inline-flex;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 20px 15px;
+}
+
+.table tbody tr td.actions .trash {
+    background-color: #ce291e;
+}
+.table tbody tr td.actions .trash:hover {
+    background-color: #b80808;
+}
+.table tbody tr td.actions .edit {
+    background-color: #ffae00;
+}
+.table tbody tr td.actions .edit:hover {
+    background-color: #ff9100;
+}
+/* Alert */
+.error {
+    background: #F2DEDE;
+    color: #A94442;
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: .5rem;
+    margin-top: 1rem;
+}
+
+.error i{
+    font-size: 16px;
+    margin-right: .5rem;
+}
+
+.save {
+    background: #e1f2de;
+    color: #1ca310;
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: .5rem;
+    margin-top: 1rem;
+}
+
+.save i{
+    font-size: 16px;
+    margin-right: .5rem;
+}
+
+.alert{
+    background: #d1d1d1;
+    color: #424242;
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: .5rem;
+    margin-top: 1rem;
+}
+
+.alert i{
+    font-size: 16px;
+    margin-right: .5rem;
+}
